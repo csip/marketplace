@@ -448,3 +448,12 @@ function twentytwelve_customize_preview_js() {
 	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
+
+/**
+ * Stop product links default linking to base language.
+ */
+
+add_filter('clean_url','translateUrl',20,3);
+function translateUrl($url, $original_url, $_context){
+    return qtrans_convertURL($url);
+}

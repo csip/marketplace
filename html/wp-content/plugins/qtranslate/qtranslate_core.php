@@ -21,6 +21,10 @@
 
 function qtrans_init() {
 	global $q_config;
+
+	if(!isset($_SESSION)){
+		session_start();
+	}
 	// check if it isn't already initialized
 	if(defined('QTRANS_INIT')) return;
 	define('QTRANS_INIT',true);
@@ -154,7 +158,12 @@ function qtrans_extractURL($url, $host = '', $referer = '') {
 	$referer = qtrans_parseURL($referer);
 	
 	$result = array();
-	$result['language'] = $q_config['default_language'];
+	if(isset($_SESSION["qtranslate_current_language"])){
+		$result['language'] = $_SESSION["qtranslate_current_language"];
+	}else{
+		$result['language'] = $q_config['default_language'];
+	}
+
 	$result['url'] = $url;
 	$result['original_url'] = $url;
 	$result['host'] = $host;
@@ -219,7 +228,9 @@ function qtrans_extractURL($url, $host = '', $referer = '') {
 			}
 		}
 	}
-	
+	if(!isset($_SESSION["qtranslate_current_language"]) || $_SESSION["qtranslate_current_language"]!=$result['language']){
+		$_SESSION["qtranslate_current_language"] = $result['language'];
+	}
 	return $result;
 }
 
@@ -520,7 +531,7 @@ function qtrans_convertBlogInfoURL($url, $what) {
 	return qtrans_convertURL($url);
 }
 
-function qtrans_convertURL($url='', $lang='', $forceadmin = false) {
+function qtrans_convertURL($url='', $lang='', $forceadmin = false, $is_change_language = false) {
 	global $q_config;
 	
 	// invalid language
@@ -597,13 +608,13 @@ function qtrans_convertURL($url='', $lang='', $forceadmin = false) {
 					$url = substr($url, 3);
 				}
 			}
-			if(!$q_config['hide_default_language']||$lang!=$q_config['default_language']) $url = $lang."/".$url;
+			if(!$q_config['hide_default_language']||$lang!=$q_config['default_language']||$is_change_language) $url = $lang."/".$url;
 			break;
 		case QT_URL_DOMAIN:	// pre domain 
-			if(!$q_config['hide_default_language']||$lang!=$q_config['default_language']) $home = preg_replace("#//#","//".$lang.".",$home,1);
+			if(!$q_config['hide_default_language']||$lang!=$q_config['default_language']||$is_change_language) $home = preg_replace("#//#","//".$lang.".",$home,1);
 			break;
 		default: // query
-			if(!$q_config['hide_default_language']||$lang!=$q_config['default_language']){
+			if(!$q_config['hide_default_language']||$lang!=$q_config['default_language']||$is_change_language){
 				if(strpos($url,'?')===false) {
 					$url .= '?';
 				} else {

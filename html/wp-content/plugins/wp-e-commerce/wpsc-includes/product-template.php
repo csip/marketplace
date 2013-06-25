@@ -1894,7 +1894,7 @@ function wpsc_the_product_price_display( $args = array() ) {
 	$defaults = array(
 		'id' => $id,
 		'old_price_text'   => __( 'Old Price: %s', 'wpsc' ),
-		'price_text'       => __( 'Price: %s', 'wpsc' ),
+		'price_text'       => __( '%s', 'wpsc' ),
 		/* translators     : %1$s is the saved amount text, %2$s is the saved percentage text, %% is the percentage sign */
 		'you_save_text'    => __( 'You save: %s', 'wpsc' ),
 		'old_price_class'  => 'pricedisplay wpsc-product-old-price ' . $id,

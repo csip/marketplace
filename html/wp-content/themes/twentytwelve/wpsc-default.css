@@ -37,11 +37,14 @@ Author URI: http://instinct.co.nz
 #default_products_page_container .imagecol img, #list_view_products_page_container img, #grid_view_products_page_container img {
 	margin:0;
 	padding:0;
-	border:1px solid #ccc;
 }
 
 .wpsc_hidden{
 	display:none;
+}
+
+.wpsc_product_title {
+	text-decoration: none;
 }
 
 /*-----DEFAULT PRODUCT DISPLAY-----*/
@@ -88,8 +91,10 @@ Author URI: http://instinct.co.nz
 
 .default_product_display {
 	margin-bottom:20px;
-	padding:10px;
+	padding:10px 15px 10px 0px;
 	position:relative;
+	float: left;
+	width: 295px;
 }
 
 .default_product_display .imagecol {
@@ -114,7 +119,7 @@ Author URI: http://instinct.co.nz
 
 .default_product_display .productcol {
 	vertical-align: middle;
-	min-height: 50px;
+	min-height: 150px;
 }
 
 .default_product_display h2.prodtitle, #content .default_product_display h2.prodtitle {

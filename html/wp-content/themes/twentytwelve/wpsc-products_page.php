@@ -103,9 +103,13 @@ $image_width = get_option('product_image_width');
 						?>
 
 
+						<!--
+
 						<div class="wpsc_description">
 							<?php echo wpsc_the_product_description(); ?>
-                        </div><!--close wpsc_description-->
+                        </div> 
+
+                    	-->
 
 						<?php if(wpsc_the_product_additional_description()) : ?>
 						<div class="additional_description_container">
@@ -113,8 +117,8 @@ $image_width = get_option('product_image_width');
 							</a>
 							<div class="additional_description">
 								<p><?php echo wpsc_the_product_additional_description(); ?></p>
-							</div><!--close additional_description-->
-						</div><!--close additional_description_container-->
+							</div>
+						</div>
 						<?php endif; ?>
 
 						<?php if(wpsc_product_external_link(wpsc_the_product_id()) != '') : ?>
@@ -156,6 +160,7 @@ $image_width = get_option('product_image_width');
                                 </fieldset>
 							<?php endif ;?>
 
+
 							<div class="wpsc_product_price">
 								<?php if( wpsc_show_stock_availability() ): ?>
 									<?php if(wpsc_product_has_stock()) : ?>
@@ -171,42 +176,45 @@ $image_width = get_option('product_image_width');
 								<?php else : ?>
 									<?php wpsc_the_product_price_display(); ?>
 
-									<!-- multi currency code -->
+									
 									<?php if(wpsc_product_has_multicurrency()) : ?>
 	                                	<?php echo wpsc_display_product_multicurrency(); ?>
                                     <?php endif; ?>
 
 									<?php if(wpsc_show_pnp()) : ?>
-										<p class="pricedisplay"><?php _e('Shipping', 'wpsc'); ?>:<span class="pp_price"><?php echo wpsc_product_postage_and_packaging(); ?></span></p>
 									<?php endif; ?>
 								<?php endif; ?>
-							</div><!--close wpsc_product_price-->
+							</div>
+
+							
 
 							<input type="hidden" value="add_to_cart" name="wpsc_ajax_action"/>
 							<input type="hidden" value="<?php echo wpsc_the_product_id(); ?>" name="product_id"/>
 
-							<!-- END OF QUANTITY OPTION -->
 							<?php if((get_option('hide_addtocart_button') == 0) &&  (get_option('addtocart_or_buynow') !='1')) : ?>
 								<?php if(wpsc_product_has_stock()) : ?>
 									<div class="wpsc_buy_button_container">
 										<div class="wpsc_loading_animation">
 											<img title="" alt="<?php esc_attr_e( 'Loading', 'wpsc' ); ?>" src="<?php echo wpsc_loading_animation_url(); ?>" />
 											<?php _e('Updating cart...', 'wpsc'); ?>
-										</div><!--close wpsc_loading_animation-->
+										</div>
 											<?php if(wpsc_product_external_link(wpsc_the_product_id()) != '') : ?>
 											<?php $action = wpsc_product_external_link( wpsc_the_product_id() ); ?>
 											<input class="wpsc_buy_button" type="submit" value="<?php echo wpsc_product_external_link_text( wpsc_the_product_id(), __( 'Buy Now', 'wpsc' ) ); ?>" onclick="return gotoexternallink('<?php echo esc_url( $action ); ?>', '<?php echo wpsc_product_external_link_target( wpsc_the_product_id() ); ?>')">
 											<?php else: ?>
 										<input type="submit" value="<?php _e('Add To Cart', 'wpsc'); ?>" name="Buy" class="wpsc_buy_button" id="product_<?php echo wpsc_the_product_id(); ?>_submit_button"/>
 											<?php endif; ?>
-									</div><!--close wpsc_buy_button_container-->
+									</div>
 								<?php endif ; ?>
 							<?php endif ; ?>
 							<div class="entry-utility wpsc_product_utility">
 								<?php edit_post_link( __( 'Edit', 'wpsc' ), '<span class="edit-link">', '</span>' ); ?>
 							</div>
+
+							
+
 							<?php do_action ( 'wpsc_product_form_fields_end' ); ?>
-						</form><!--close product_form-->
+						</form>
 
 						<?php if((get_option('hide_addtocart_button') == 0) && (get_option('addtocart_or_buynow')=='1')) : ?>
 							<?php echo wpsc_buy_now_button(wpsc_the_product_id()); ?>

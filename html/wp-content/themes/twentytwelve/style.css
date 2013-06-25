@@ -722,7 +722,6 @@ footer[role="contentinfo"] a:hover {
 }
 article.sticky .featured-post {
 	border-top: 4px double #ededed;
-	border-bottom: 4px double #ededed;
 	color: #757575;
 	font-size: 13px;
 	font-size: 0.928571429rem;
@@ -945,7 +944,6 @@ img.aligncenter {
 	padding: 6px 10px 6px 0;
 }
 .site-content article {
-	border-bottom: 4px double #ededed;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
 	padding-bottom: 24px;

@@ -31,7 +31,7 @@ function qtrans_header(){
 		$baseurl = preg_replace('#^http://#','https://', $baseurl);
 	}
 	foreach($q_config['enabled_languages'] as $language) {
-		$css .=".qtrans_flag_".$language." { background:url(".$baseurl.'/'.$q_config['flag_location'].$q_config['flag'][$language].") no-repeat }\n";
+		$css .=".qtrans_flag_".$language." { background:url(".$baseurl.'/'.$q_config['flag_location'].$q_config['flag'][$language].") no-repeat 0px 3px}\n";
 	}
 	$css .="</style>\n";
 	echo apply_filters('qtranslate_header_css',$css);

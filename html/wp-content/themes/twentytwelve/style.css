@@ -111,11 +111,16 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 nav,
 section {
 	display: block;
 }
+
+hgroup {
+	display: block;
+	float: left;
+}
+
 audio,
 canvas,
 video {
@@ -533,8 +538,6 @@ a:hover {
 	margin: 1.714285714rem 0 0;
 }
 .widget-area {
-	margin: 24px 0 0;
-	margin: 1.714285714rem 0 0;
 }
 
 /* Header */
@@ -614,8 +617,6 @@ section[role="banner"] {
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
-	margin-bottom: 48px;
-	margin-bottom: 3.428571429rem;
 	word-wrap: break-word;
 }
 .widget-area .widget h3 {
@@ -628,6 +629,7 @@ section[role="banner"] {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
+	float: left;
 }
 .widget-area .widget p {
 	margin-bottom: 24px;
@@ -644,6 +646,8 @@ section[role="banner"] {
 }
 .widget-area .widget a {
 	color: #757575;
+	text-decoration: none;
+	padding-right: 15px;
 }
 .widget-area .widget a:hover {
 	color: #21759b;
@@ -1434,7 +1438,6 @@ img#wpstats {
 	}
 	.site-content {
 		float: left;
-		width: 65.104166667%;
 	}
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
@@ -1443,7 +1446,8 @@ img#wpstats {
 	}
 	.widget-area {
 		float: right;
-		width: 26.041666667%;
+		width: 250px;
+		margin-bottom: 15px;
 	}
 	.site-header h1,
 	.site-header h2 {

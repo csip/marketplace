@@ -103,13 +103,9 @@ $image_width = get_option('product_image_width');
 						?>
 
 
-						<!--
-
 						<div class="wpsc_description">
-							<?php echo wpsc_the_product_description(); ?>
+							<?php echo substr(wpsc_the_product_description(),0,50); ?><?php  _e('...', 'wpsc'); ?>
                         </div> 
-
-                    	-->
 
 						<?php if(wpsc_the_product_additional_description()) : ?>
 						<div class="additional_description_container">
@@ -128,25 +124,6 @@ $image_width = get_option('product_image_width');
 						<?php endif; ?>
 						<form class="product_form"  enctype="multipart/form-data" action="<?php echo esc_url( $action ); ?>" method="post" name="product_<?php echo wpsc_the_product_id(); ?>" id="product_<?php echo wpsc_the_product_id(); ?>" >
 						<?php do_action ( 'wpsc_product_form_fields_begin' ); ?>
-						<?php /** the variation group HTML and loop */?>
-                        <?php if (wpsc_have_variation_groups()) { ?>
-                        <fieldset><legend><?php _e('Product Options', 'wpsc'); ?></legend>
-						<div class="wpsc_variation_forms">
-                        	<table>
-							<?php while (wpsc_have_variation_groups()) : wpsc_the_variation_group(); ?>
-								<tr><td class="col1"><label for="<?php echo wpsc_vargrp_form_id(); ?>"><?php echo wpsc_the_vargrp_name(); ?>:</label></td>
-								<?php /** the variation HTML and loop */?>
-								<td class="col2"><select class="wpsc_select_variation" name="variation[<?php echo wpsc_vargrp_id(); ?>]" id="<?php echo wpsc_vargrp_form_id(); ?>">
-								<?php while (wpsc_have_variations()) : wpsc_the_variation(); ?>
-									<option value="<?php echo wpsc_the_variation_id(); ?>" <?php echo wpsc_the_variation_out_of_stock(); ?>><?php echo wpsc_the_variation_name(); ?></option>
-								<?php endwhile; ?>
-								</select></td></tr>
-							<?php endwhile; ?>
-                            </table>
-						</div><!--close wpsc_variation_forms-->
-                        </fieldset>
-						<?php } ?>
-						<?php /** the variation group HTML and loop ends here */?>
 
 							<!-- THIS IS THE QUANTITY OPTION MUST BE ENABLED FROM ADMIN SETTINGS -->
 							<?php if(wpsc_has_multi_adding()): ?>
@@ -202,7 +179,6 @@ $image_width = get_option('product_image_width');
 											<?php $action = wpsc_product_external_link( wpsc_the_product_id() ); ?>
 											<input class="wpsc_buy_button" type="submit" value="<?php echo wpsc_product_external_link_text( wpsc_the_product_id(), __( 'Buy Now', 'wpsc' ) ); ?>" onclick="return gotoexternallink('<?php echo esc_url( $action ); ?>', '<?php echo wpsc_product_external_link_target( wpsc_the_product_id() ); ?>')">
 											<?php else: ?>
-										<input type="submit" value="<?php _e('Add To Cart', 'wpsc'); ?>" name="Buy" class="wpsc_buy_button" id="product_<?php echo wpsc_the_product_id(); ?>_submit_button"/>
 											<?php endif; ?>
 									</div>
 								<?php endif ; ?>

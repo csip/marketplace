@@ -62,17 +62,53 @@ $image_width = get_option('product_image_width');
 
 
 		<div class="wpsc_default_product_list">
+
+		<!--functions to get categories, links here-->
+
+	    <?php function cdl_get_cat() {
+	    global $wp_query, $wpsc_query;
+	    $query_data = Array();
+	    $cdl_post_id = wpsc_the_product_id();
+
+	    $categories = wp_get_object_terms( $cdl_post_id , 'wpsc_product_category' );
+
+	    $count = count($categories);
+
+	        for ($i = 0; $i < ($count); $i++) {
+	            $query_data['category'] = $categories[$i]->name;
+	            echo $query_data['category'];
+	            if ($i < ($count - 1))
+	            echo ", ";
+	        }
+
+	    }  
+	    cdl_get_cat();
+	    ?>
+
+	    <?php function cdl_get_cat_name() {
+	    global $wp_query, $wpsc_query;
+	    $query_data = Array();
+	    $cdl_post_id = wpsc_the_product_id();
+
+	    $categories = wp_get_object_terms( $cdl_post_id , 'wpsc_product_category' );
+
+	    $count = count($categories);
+
+	        for ($i = 0; $i < ($count); $i++) {
+	            $query_data['category'] = $categories[$i]->slug;
+	            echo $query_data['category'];
+	            if ($i < ($count - 1))
+	            echo ", ";
+	        }
+
+	    }  
+	    cdl_get_cat_name();
+	    ?>	    
+
 		<?php /** start the product loop here */?>
 		<?php while (wpsc_have_products()) :  wpsc_the_product(); ?>
 
 			<div class="default_product_display product_view_<?php echo wpsc_the_product_id(); ?> <?php echo wpsc_category_class(); ?> group">
-				<h2 class="prodtitle entry-title">
-							<?php if(get_option('hide_name_link') == 1) : ?>
-								<?php echo wpsc_the_product_title(); ?>
-							<?php else: ?>
-								<a class="wpsc_product_title" href="<?php echo esc_url( wpsc_the_product_permalink() ); ?>"><?php echo wpsc_the_product_title(); ?></a>
-							<?php endif; ?>
-						</h2>
 				<?php if(wpsc_show_thumbnails()) :?>
 					<div class="imagecol" style="width:<?php echo $image_width; ?>;" id="imagecol_<?php echo wpsc_the_product_id(); ?>">
 						<?php if(wpsc_the_product_thumbnail()) :
@@ -93,6 +129,14 @@ $image_width = get_option('product_image_width');
 						?>
 					</div><!--close imagecol-->
 				<?php endif; ?>
+					<h2 class="prodtitle entry-title">
+						<?php if(get_option('hide_name_link') == 1) : ?>
+							<?php echo wpsc_the_product_title(); ?>
+						<?php else: ?>
+							<a class="wpsc_product_title" href="<?php echo esc_url( wpsc_the_product_permalink() ); ?>"><?php echo wpsc_the_product_title(); ?></a>
+						<?php endif; ?>
+					</h2>
+
 					<div class="productcol" style="margin-left:<?php echo $image_width + 20; ?>px;" >
 
 
@@ -104,7 +148,7 @@ $image_width = get_option('product_image_width');
 
 
 						<div class="wpsc_description">
-							<?php echo substr(wpsc_the_product_description(),0,50); ?><?php  _e('...', 'wpsc'); ?>
+							<p class="product_grid_item product_view_<?php echo wpsc_the_product_id(); ?>">by <a href="<?php cdl_get_cat_name();?>"><?php cdl_get_cat(); ?></a></p>
                         </div> 
 
 						<?php if(wpsc_the_product_additional_description()) : ?>
@@ -124,25 +168,6 @@ $image_width = get_option('product_image_width');
 						<?php endif; ?>
 						<form class="product_form"  enctype="multipart/form-data" action="<?php echo esc_url( $action ); ?>" method="post" name="product_<?php echo wpsc_the_product_id(); ?>" id="product_<?php echo wpsc_the_product_id(); ?>" >
 						<?php do_action ( 'wpsc_product_form_fields_begin' ); ?>
-						<?php /** the variation group HTML and loop */?>
-		                        <?php if (wpsc_have_variation_groups()) { ?>
-		                        <fieldset><legend><?php _e('Product Options', 'wpsc'); ?></legend>
-								<div class="wpsc_variation_forms">
-		                        	<table>
-									<?php while (wpsc_have_variation_groups()) : wpsc_the_variation_group(); ?>
-										<tr><td class="col1"><label for="<?php echo wpsc_vargrp_form_id(); ?>"><?php echo wpsc_the_vargrp_name(); ?>:</label></td>
-										<?php /** the variation HTML and loop */?>
-										<td class="col2"><select class="wpsc_select_variation" name="variation[<?php echo wpsc_vargrp_id(); ?>]" id="<?php echo wpsc_vargrp_form_id(); ?>">
-										<?php while (wpsc_have_variations()) : wpsc_the_variation(); ?>
-											<option value="<?php echo wpsc_the_variation_id(); ?>" <?php echo wpsc_the_variation_out_of_stock(); ?>><?php echo wpsc_the_variation_name(); ?></option>
-										<?php endwhile; ?>
-										</select></td></tr>
-									<?php endwhile; ?>
-		                            </table>
-								</div><!--close wpsc_variation_forms-->
-		                        </fieldset>
-								<?php } ?>
-								<?php /** the variation group HTML and loop ends here */?>
  
 							<!-- THIS IS THE QUANTITY OPTION MUST BE ENABLED FROM ADMIN SETTINGS -->
 							<?php if(wpsc_has_multi_adding()): ?>

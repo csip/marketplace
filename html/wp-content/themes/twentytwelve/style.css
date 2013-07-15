@@ -1325,12 +1325,10 @@ a.comment-edit-link:hover {
 	margin-bottom: 0;
 }
 .template-front-page .widget-area {
-	clear: both;
-	float: none;
+	float: left;
 	width: auto;
 	padding-top: 24px;
 	padding-top: 1.714285714rem;
-	border-top: 1px solid #ededed;
 }
 .template-front-page .widget-area .widget li {
 	margin: 8px 0 0;
@@ -1442,7 +1440,7 @@ img#wpstats {
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
 	body.full-width .site-content {
-		width: 100%;
+		width: 66%;
 	}
 	.widget-area {
 		float: right;

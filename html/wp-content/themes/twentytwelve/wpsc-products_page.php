@@ -137,7 +137,7 @@ $image_width = get_option('product_image_width');
 						<?php endif; ?>
 					</h2>
 
-					<div class="productcol" style="margin-left:<?php echo $image_width + 20; ?>px;" >
+					<div class="productcol">
 
 
 

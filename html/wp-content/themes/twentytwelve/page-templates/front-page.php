@@ -30,6 +30,7 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->
-	</div>
 <?php get_sidebar( 'front' ); ?>
+	</div>
+
 <?php get_footer(); ?>

@@ -675,6 +675,27 @@ footer[role="contentinfo"] a:hover {
 	color: #21759b;
 }
 
+.site-info {
+	float: left;
+	margin-right: 65px;
+}
+
+.footer-logo {
+	width: 120px;
+	height: 96px;
+}
+
+.footer-links {
+	width: 150px;
+	float: left;
+	padding-top: 5px;
+	margin-bottom: 25px;
+}
+
+.footer-address {
+	float: left;
+	padding-top: 5px;
+}
 
 /* =Main content and comment content
 -------------------------------------------------------------- */

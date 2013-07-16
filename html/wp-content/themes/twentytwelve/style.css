@@ -538,6 +538,7 @@ a:hover {
 	padding: 24px 0;
 	padding: 1.714285714rem 0;
 	background-color: #FFF;
+	height: 50px;
 }
 .site-header h1,
 .site-header h2 {
@@ -574,9 +575,9 @@ a:hover {
 
 /* Navigation Menu */
 .main-navigation {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
 	text-align: center;
+	margin-bottom: 10px;
+	background-color: #000000;
 }
 .main-navigation li {
 	margin-top: 24px;
@@ -1468,8 +1469,6 @@ img#wpstats {
 	}
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
-		border-bottom: 1px solid #ededed;
-		border-top: 1px solid #ededed;
 		display: inline-block !important;
 		text-align: left;
 		width: 100%;

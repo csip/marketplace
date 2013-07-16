@@ -46,17 +46,20 @@
 			</div><!-- #secondary -->
 			<?php endif; ?>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-				<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-
 			<?php $header_image = get_header_image();
 			if ( ! empty( $header_image ) ) : ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 			<?php endif; ?>
 		</div>
 	</header><!-- #masthead -->
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div class="center-auto-wrapper">
+			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
+			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+		</div>
+	</nav><!-- #site-navigation -->
+
+
 
 	<div id="main" class="wrapper">

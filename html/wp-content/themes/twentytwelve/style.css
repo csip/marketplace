@@ -190,11 +190,9 @@ img {
 .widget-title,
 .entry-content th,
 .comment-content th {
-	font-size: 11px;
-	font-size: 0.785714286rem;
+	font-size: 13px;
 	line-height: 2.181818182;
 	font-weight: bold;
-	text-transform: uppercase;
 	color: #636363;
 }
 
@@ -534,8 +532,6 @@ a:hover {
 	background-color: #fff;
 }
 .site-content {
-	margin: 24px 0 0;
-	margin: 1.714285714rem 0 0;
 }
 .widget-area {
 }
@@ -1325,18 +1321,13 @@ a.comment-edit-link:hover {
 	margin-bottom: 0;
 }
 .template-front-page .widget-area {
-	float: left;
-	width: auto;
-	padding-top: 24px;
-	padding-top: 1.714285714rem;
+	float: right;
+	width: 250px;
 }
 .template-front-page .widget-area .widget li {
-	margin: 8px 0 0;
-	margin: 0.571428571rem 0 0;
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.714285714;
-	list-style-type: square;
 	list-style-position: inside;
 }
 .template-front-page .widget-area .widget li a {
@@ -1557,20 +1548,12 @@ img#wpstats {
 	}
 	.template-front-page .widget-area .widget,
 	.template-front-page.two-sidebars .widget-area .front-widgets {
-		float: left;
-		width: 51.875%;
-		margin-bottom: 24px;
-		margin-bottom: 1.714285714rem;
 	}
 	.template-front-page .widget-area .widget:nth-child(odd) {
 		clear: right;
 	}
 	.template-front-page .widget-area .widget:nth-child(even),
 	.template-front-page.two-sidebars .widget-area .front-widgets + .front-widgets {
-		float: right;
-		width: 39.0625%;
-		margin: 0 0 24px;
-		margin: 0 0 1.714285714rem;
 	}
 	.template-front-page.two-sidebars .widget,
 	.template-front-page.two-sidebars .widget:nth-child(even) {

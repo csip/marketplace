@@ -527,9 +527,6 @@ a:hover {
 
 /* Page structure */
 .site {
-	padding: 0 24px;
-	padding: 0 1.714285714rem;
-	background-color: #fff;
 }
 .site-content {
 }
@@ -540,6 +537,7 @@ a:hover {
 .site-header {
 	padding: 24px 0;
 	padding: 1.714285714rem 0;
+	background-color: #FFF;
 }
 .site-header h1,
 .site-header h2 {
@@ -654,19 +652,16 @@ section[role="banner"] {
 
 /* Footer */
 footer[role="contentinfo"] {
-	border-top: 1px solid #ededed;
 	clear: both;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
-	max-width: 960px;
-	max-width: 68.571428571rem;
 	margin-top: 24px;
 	margin-top: 1.714285714rem;
-	margin-left: auto;
-	margin-right: auto;
 	padding: 24px 0;
 	padding: 1.714285714rem 0;
+	height: 110px;
+	background-color: #fff;
 }
 footer[role="contentinfo"] a {
 	color: #686868;
@@ -1426,6 +1421,12 @@ img#wpstats {
 }
 
 
+.center-auto-wrapper {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* =Media queries
 -------------------------------------------------------------- */
 
@@ -1441,10 +1442,6 @@ img#wpstats {
 		width: 80%;
 	}
 	.site {
-		margin: 0 auto;
-		max-width: 960px;
-		max-width: 68.571428571rem;
-		overflow: hidden;
 	}
 	.site-content {
 		float: left;
@@ -1593,13 +1590,6 @@ img#wpstats {
 		background-color: #e6e6e6;
 	}
 	body .site {
-		padding: 0 40px;
-		padding: 0 2.857142857rem;
-		margin-top: 48px;
-		margin-top: 3.428571429rem;
-		margin-bottom: 48px;
-		margin-bottom: 3.428571429rem;
-		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 	}
 	body.custom-background-empty {
 		background-color: #fff;

@@ -148,7 +148,7 @@ function qtrans_convertDateFormatToStrftimeFormat($format) {
 	
 	$date_parameters = array();
 	$strftime_parameters = array();
-	$date_parameters[] = '#%#'; 			$strftime_parameters[] = '%%';
+	$date_parameters[] = '#%#'; 			$strftime_parameters[] = '%';
 	foreach($mappings as $df => $sf) {
 		$date_parameters[] = '#(([^%\\\\])'.$df.'|^'.$df.')#';	$strftime_parameters[] = '${2}'.$sf;
 	}

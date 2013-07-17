@@ -465,6 +465,9 @@ table.list_productdisplay p.soldout {
 .single_product_display .imagecol img.no-image, #content .single_product_display .imagecol img.no-image {
 	background-color:#EFEFEF;
 	display:block;
+	width:310px;
+	height:310px;
+	margin-right:10px;
 }
 
 

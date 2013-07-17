@@ -1331,9 +1331,16 @@ a.comment-edit-link:hover {
 	line-height: 1.714285714;
 	list-style-position: inside;
 }
-.template-front-page .widget-area .widget li a {
-	color: #757575;
+
+.template-front-page .widget-area .first .widget li a {
+	font-size: 15px;
+	padding-right:100px;
 }
+
+.template-front-page .widget-area .first .widget li a.wpsc_category_image_link {
+	padding-right:0px;
+}
+
 .template-front-page .widget-area .widget li a:hover {
 	color: #8bc53d;
 }

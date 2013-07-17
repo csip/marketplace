@@ -35,7 +35,7 @@ Author URI: http://instinct.co.nz
 /*-----GENERAL-----*/
 
 #default_products_page_container .imagecol img, #list_view_products_page_container img, #grid_view_products_page_container img {
-	margin:0;
+	margin-bottom:5px;
 	padding:0;
 }
 
@@ -90,11 +90,13 @@ Author URI: http://instinct.co.nz
 }
 
 .default_product_display {
-	margin-bottom:20px;
-	padding:10px 15px 10px 0px;
+	margin:10px 15px 10px 5px;
 	position:relative;
 	float: left;
-	width: 195px;
+	width: 205px;
+	-webkit-box-shadow: -2px 2px 3px rgba(50, 50, 50, 0.4);
+	-moz-box-shadow: -2px 2px 3px rgba(50, 50, 50, 0.4);
+	box-shadow: -2px 2px 3px rgba(50, 50, 50, 0.4);
 }
 
 .default_product_display .imagecol {
@@ -119,13 +121,19 @@ Author URI: http://instinct.co.nz
 
 .default_product_display .productcol {
 	vertical-align: middle;
-	min-height: 150px;
+	min-height: 100px;
+	background-color: white;
+	padding-left: 10px;
+	padding-top: 5px;
+	border: 1px 1px 1px 0px solid #000000;
 }
 
 .default_product_display h2.prodtitle, #content .default_product_display h2.prodtitle {
-	margin:0 0 5px 0;
+	margin:0 0 0 0;
 	line-height:1;
 	clear:none;
+	background-color:white;
+	padding-left:10px;
 }
 
 .default_product_display span.sale {
@@ -138,7 +146,10 @@ Author URI: http://instinct.co.nz
 
 .default_product_display .wpsc_description, #content .default_product_display .wpsc_description {
 	font-size:13px;	
-	height: 26px;	
+	height: 26px;
+	border-bottom: solid 1px #9e9e9e;
+	margin-bottom: 5px;
+	margin-right: 5px;
 }
 
 .default_product_display .additional_description, #content .default_product_display .additional_description {
@@ -441,7 +452,6 @@ table.list_productdisplay p.soldout {
 }
 
 .imagecol {
-	margin-right:5px;
 /* 	width:25%; */
 	float:left;	
 	position:relative;
@@ -477,11 +487,6 @@ table.list_productdisplay p.soldout {
 }
 
 .single_product_display form.product_form input, #content .single_product_display form.product_form input {
-	padding:2px;
-	margin:0;
-
-	line-height:1.2em;
-	font-size:14px;
 }
 
 .single_product_display form.product_form input.input_custom_text, #content .single_product_display form.product_form input.input_custom_text {

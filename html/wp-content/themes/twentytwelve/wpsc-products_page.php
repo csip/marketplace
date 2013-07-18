@@ -50,7 +50,9 @@ $image_width = get_option('product_image_width');
 				<?php endif; ?>
 
 				<?php if(wpsc_show_category_description() &&  wpsc_category_description()) : ?>
-					<?php echo wpsc_category_description(); ?>
+					<div class="wpsc_category_details_description">
+						<?php echo wpsc_category_description(); ?>
+					</div>
 				<?php endif; ?>
 			</div><!--close wpsc_category_details-->
 		<?php endif; ?>
@@ -82,7 +84,6 @@ $image_width = get_option('product_image_width');
 	        }
 
 	    }  
-	    cdl_get_cat();
 	    ?>
 
 	    <?php function cdl_get_cat_name() {
@@ -102,7 +103,6 @@ $image_width = get_option('product_image_width');
 	        }
 
 	    }  
-	    cdl_get_cat_name();
 	    ?>	    
 
 		<?php /** start the product loop here */?>

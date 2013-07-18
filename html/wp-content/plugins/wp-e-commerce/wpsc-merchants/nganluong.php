@@ -7,6 +7,8 @@ $nzshpcrt_gateways[$num]['form'] = "form_nganluong";
 $nzshpcrt_gateways[$num]['submit_function'] = "submit_nganluong";
 $nzshpcrt_gateways[$num]['payment_type'] = "nganluong";
 
+// Hack by multiplying subtotal to USD exchange rate until we can fix for it to be automatic
+
 function cart_total() {
 	global $wpsc_cart;  
 	$total = $wpsc_cart->calculate_subtotal();
@@ -15,7 +17,7 @@ function cart_total() {
 	if(wpsc_tax_isincluded() == false){
 		$total += $wpsc_cart->calculate_total_tax();
 	}
-	return $total;
+	return $total*21243;
 }
 function gateway_nganluong($seperator, $sessionid) {
 	global $wpdb;

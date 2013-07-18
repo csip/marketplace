@@ -1333,21 +1333,21 @@ a.comment-edit-link:hover {
 	margin-bottom: 5px;
 }
 
-.template-front-page .widget-area .first .widget li a {
+.widget-area .first .widget li a {
 	font-size: 14px;
 	padding-right:100px;
 }
 
-.template-front-page .widget-area .first .widget li a.wpsc_category_image_link {
+.widget-area .first .widget li a.wpsc_category_image_link {
 	padding-right:0px;
 }
 
-.template-front-page .widget-area .first .widget #product_tag_wrap a {
+.widget-area .first .widget #product_tag_wrap a {
 	margin-right:150px;
 	line-height:2rem;
 }
 
-.template-front-page .widget-area .first .widget #product_tag_wrap a:hover {
+.widget-area .first .widget #product_tag_wrap a:hover {
 	color: #8bc53d;
 }
 

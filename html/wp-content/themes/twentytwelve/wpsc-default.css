@@ -459,7 +459,7 @@ table.list_productdisplay p.soldout {
 
 .single_product_display .imagecol img.product_image {
 	background-color:#efefef;
-	border:1px solid #ccc;	
+	margin-right: 10px;
 }
 
 .single_product_display .imagecol img.no-image, #content .single_product_display .imagecol img.no-image {

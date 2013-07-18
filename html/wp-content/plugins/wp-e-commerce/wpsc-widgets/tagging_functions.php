@@ -9,8 +9,8 @@
 function product_tag_cloud( $args = '' ) {
 
 	$defaults = array(
-		'smallest' => 8,
-		'largest'  => 22,
+		'smallest' => 11,
+		'largest'  => 11,
 		'unit'     => 'pt',
 		'number'   => 45,
 		'format'   => 'flat',
@@ -76,7 +76,7 @@ function wp_generate_product_tag_cloud( $tags, $args = '' ) {
 	$font_spread = $largest - $smallest;
 
 	if ( $font_spread <= 0 )
-		$font_spread = 1;
+		$font_spread = 0;
 
 	$font_step = $font_spread / $spread;
 

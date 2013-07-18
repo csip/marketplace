@@ -84,7 +84,8 @@ Author URI: http://instinct.co.nz
 	-webkit-box-shadow: -2px 2px 3px rgba(50, 50, 50, 0.4);
 	-moz-box-shadow: -2px 2px 3px rgba(50, 50, 50, 0.4);
 	box-shadow: -2px 2px 3px rgba(50, 50, 50, 0.4);
-	padding: 10px;	
+	padding: 10px;
+	margin-left: 5px;	
 }
 
 .wpsc_category_details_description {

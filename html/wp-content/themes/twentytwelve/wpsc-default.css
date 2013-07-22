@@ -897,10 +897,20 @@ span.rating_saved{
 
 #content #checkout_page_container p{
 	margin-bottom: 0px;
+	float: left;
 }
 
 .wpsc_checkout_table input.text{
 	width:255px;
+}
+
+.wpsc_checkout_form_9 .wpsc_email_address {
+	font-size: 12px;
+	color: #757575;
+}
+
+.wpsc_checkout_forms .wpsc_email_address_p {
+	margin-left: 31px;
 }
 
 #content img#wpsc_checkout_gravatar{
@@ -920,6 +930,7 @@ background-color: #f5f5f5;
 	bottom: 20px;
 	float: right;
 	position: relative;
+	margin-right: 215px;
 }
 
 #checkout_page_container .total_price.total_shipping td{
@@ -929,7 +940,6 @@ background-color: #f5f5f5;
 
 #checkout_page_container .total_price.total_shipping td:first-child, 
 #checkout_page_container .total_price td:first-child {
-	padding-left: 50px;
 }
 
 #checkout_page_container .wpsc_shipping_quote_name, 
@@ -968,6 +978,16 @@ background-color: #f5f5f5;
 	padding:0px;
 	vertical-align: top;
 }
+
+#content #checkout_page_container table.wpsc_checkout_table tr td div.custom_gateway label input {
+	margin-right: 10px;
+}
+
+select#current_country.wpsc_country_dropdown {
+	margin-right: 96px;
+}
+
+
 
 .wpsc-shopping-cart .asterix {
 	color:red;

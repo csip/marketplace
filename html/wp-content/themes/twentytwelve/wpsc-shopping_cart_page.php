@@ -240,6 +240,39 @@ endif;
 			</div>
          
 	<?php endif; ?>
+
+   <table class='wpsc_checkout_table wpsc_checkout_table_totals'>
+   <?php if(wpsc_uses_shipping()) : ?>
+      <tr class="total_price total_shipping">
+         <td class='wpsc_totals'>
+            <?php _e('Total Shipping:', 'wpsc'); ?>
+         </td>
+         <td class='wpsc_totals'>
+            <span id="checkout_shipping" class="pricedisplay checkout-shipping"><?php echo wpsc_cart_shipping(); ?></span>
+         </td>
+      </tr>
+   <?php endif; ?>
+
+  <?php if(wpsc_uses_coupons() && (wpsc_coupon_amount(false) > 0)): ?>
+   <tr class="total_price">
+      <td class='wpsc_totals'>
+         <?php _e('Discount:', 'wpsc'); ?>
+      </td>
+      <td class='wpsc_totals'>
+         <span id="coupons_amount" class="pricedisplay"><?php echo wpsc_coupon_amount(); ?></span>
+       </td>
+      </tr>
+  <?php endif ?>
+   <tr class='total_price'>
+      <td class='wpsc_totals'>
+      <?php _e('Total Price:', 'wpsc'); ?>
+      </td>
+      <td class='wpsc_totals'>
+         <span id='checkout_total' class="pricedisplay checkout-total"><?php echo wpsc_cart_total(); ?></span>
+      </td>
+   </tr>
+   </table>
+
 	<form class='wpsc_checkout_forms' action='<?php echo esc_url( get_option( 'shopping_cart_url' ) ); ?>' method='post' enctype="multipart/form-data">
       <?php
       /**
@@ -434,43 +467,6 @@ endif;
 
 <!-- div for make purchase button -->
 
-<div class='clear'></div>
-</form>
-
-   <table class='wpsc_checkout_table wpsc_checkout_table_totals'>
-      <?php if(wpsc_uses_shipping()) : ?>
-         <tr class="total_price total_shipping">
-            <td class='wpsc_totals'>
-               <?php _e('Total Shipping:', 'wpsc'); ?>
-            </td>
-            <td class='wpsc_totals'>
-               <span id="checkout_shipping" class="pricedisplay checkout-shipping"><?php echo wpsc_cart_shipping(); ?></span>
-            </td>
-         </tr>
-      <?php endif; ?>
-
-     <?php if(wpsc_uses_coupons() && (wpsc_coupon_amount(false) > 0)): ?>
-      <tr class="total_price">
-         <td class='wpsc_totals'>
-            <?php _e('Discount:', 'wpsc'); ?>
-         </td>
-         <td class='wpsc_totals'>
-            <span id="coupons_amount" class="pricedisplay"><?php echo wpsc_coupon_amount(); ?></span>
-          </td>
-         </tr>
-     <?php endif ?>
-
-
-
-   <tr class='total_price'>
-      <td class='wpsc_totals'>
-      <?php _e('Total Price:', 'wpsc'); ?>
-      </td>
-      <td class='wpsc_totals'>
-         <span id='checkout_total' class="pricedisplay checkout-total"><?php echo wpsc_cart_total(); ?></span>
-      </td>
-   </tr>
-   </table>
       <div class='wpsc_make_purchase'>
          <span>
             <?php if(!wpsc_has_tnc()) : ?>
@@ -481,7 +477,8 @@ endif;
          </span>
       </div>
 
-
+<div class='clear'></div>
+</form>
 
 </div>
 </div><!--close checkout_page_container-->
